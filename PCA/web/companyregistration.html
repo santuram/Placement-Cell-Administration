@@ -1,0 +1,51 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+
+
+<%-- 
+    Document   : companyRegistration
+    Created on : Aug 1, 2013, 8:40:47 AM
+    Author     : Mahesh
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>JSP Page</title>
+    </head>
+    
+   <body>
+
+
+<center>
+
+<FORM action="companyRegistration.jsp" method="post">
+
+    
+    <TABLE>
+        
+<TR><TD>Company Name		<TD><INPUT TYPE= "TEXT" NAME= "companyName" SIZE=10> <BR>
+<TR><TD>Company Id		<TD><INPUT TYPE= "TEXT" NAME= "companyId" SIZE=10> <BR>
+<TR><TD>User Name		<TD><INPUT TYPE= "TEXT" NAME= "username" SIZE=10> <BR>
+<TR><TD>Password		<TD><INPUT TYPE= "password" NAME= "password" SIZE=15><BR>
+<TR><TD>Confirm Password	<TD><INPUT TYPE= "password" NAME= "confirmPassword" SIZE=15><BR>
+<TR><TD>Email Id		<TD><input type="email" NAME= "emailId" required /><BR>    
+<TR><TD>Address			<TD><TEXTAREA NAME= "address" cols= "20" rows= "3"> </textarea><BR>
+<TR><TD>City			<TD><INPUT TYPE= "TEXT" NAME= "city" SIZE=15><BR>
+<TR><TD>State			<TD><INPUT TYPE= "TEXT" NAME= "state" SIZE=15><BR>
+<TR><TD>Pin code		<TD><INPUT TYPE= "TEXT" NAME= "pinCode" SIZE=6><BR>
+<TR><TD>Contact number		<TD><input type="TEXT"  name="contactNumber" required/><BR>  
+
+
+</TABLE>
+
+   <input type="submit" />
+</FORM>
+</center>
+</body>
+</html>

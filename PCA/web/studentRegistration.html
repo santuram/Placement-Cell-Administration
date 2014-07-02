@@ -1,0 +1,418 @@
+<%-- 
+    Document   : index
+    Created on : Aug 7, 2013, 4:32:14 PM
+    Author     : Mahesh
+--%>
+<%@ page import ="java.sql.*" %>
+<%@ page import ="javax.sql.*" %>
+
+<!doctype html>
+<html >
+<head>
+	<meta charset="utf-8">
+    <title>Shree College - SignUp</title>
+	<link href="css/ui-lightness/jquery-ui-1.10.3.custom.css" rel="stylesheet">
+	<script src="js/jquery-1.9.1.js"></script>
+	<script src="js/jquery-ui-1.10.3.custom.js"></script>
+  
+    
+	<script>
+	$(function() {
+
+
+		var availableTags1 = [
+			"B.E",
+			"B.Tech",
+			"M.E",
+			"M.Tech",
+			"Science",
+			"Arts",
+			
+		];
+		var availableTags2 = [
+			"Computer Science And Engineering",
+			"Mechanical Engineering",
+			"Electrical Engineering",
+			" Electronics and Communication Engineering",
+			"CiviL Engineering",
+			"Aeronautical Engineering",
+			"Bio-Medical Engineering",
+			"Bio Technology",
+			"Marine Engineering",
+			"Automobile Engineering",
+			"Bachelor of Computer Applications",
+			"Masters of Computer Applications",
+			"Masters of Business Administration",
+			"Bachelor of Business Administration",
+			"Bachelor of Business Management"
+			
+		];
+		$( "#autocomplete1" ).autocomplete({
+			source: availableTags1
+		});
+		$( "#autocomplete2" ).autocomplete({
+			source: availableTags2
+		});
+		$( "#accordion" ).accordion();
+	    $( "#radioset" ).buttonset();
+
+
+	    
+	});
+
+</script>
+<link rel="stylesheet" type="text/css" media="all" href="SignUp.css">
+<style type="text/css">
+	#acc{
+        margin-left: 10%;
+        margin-top: 5%;
+		width: 80%;
+
+
+       }
+        html { 
+  background: url(black.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  }
+    #formalign{
+	
+		}
+     #formalign label{
+              margin-top: 5%;
+             
+              position: relative;
+              margin-left: 15%;
+              display: block;
+     }
+     #formalign input,textarea{
+        margin-top: -5%;
+     	
+     	
+     	margin-left: 45%;
+     	overflow-x:hidden;
+     	overflow-y:auto;  
+     }
+        #formalign textarea{
+        margin-top: 10%;
+     	
+     	
+     	margin-left: 45%;
+     	overflow-x:hidden;
+     	overflow-y:auto;  
+     }
+   #gender{
+               margin-left: 27%;
+        
+   }
+   /* gender label*/
+    #g{
+   	
+   	float: left;
+   	margin-right: 22%;
+   	margin-left: 15%;
+   }
+ /* predegree %'s ==pd*/
+#pd{
+
+	margin-top: 2%;
+	margin-left: 45%;
+}
+/*Sign up button */
+.SignIn2{
+	
+	margin-left: 10%;
+  width: 80%;
+border:0px solid #C9C9C9;
+-webkit-border-radius: 8px; 
+-moz-border-radius: 8px;
+border-radius: 8px;
+font-size:19px;
+font-family:arial; 
+padding: 8px 8px 8px 8px; 
+text-decoration:none; 
+display:inline-block; 
+color: white;
+ background-color: #333333; 
+ background-image: -webkit-gradient(linear, left top, left bottom, from(#727171), to(#1E1A1A));
+ background-image: -webkit-linear-gradient(top, #727171, #1E1A1A);
+ background-image: -moz-linear-gradient(top, #727171, #1E1A1A);
+ background-image: -ms-linear-gradient(top, #727171, #1E1A1A);
+ background-image: -o-linear-gradient(top, #727171, #1E1A1A);
+ background-image: linear-gradient(to bottom, #727171, #1E1A1A);
+}
+.SignIn2:hover{
+color: black;
+	margin-left: 0%;
+  width: 100%;
+border:0px solid #C9C9C9;
+-webkit-border-radius: 8px; 
+-moz-border-radius: 8px;
+border-radius: 8px;
+font-size:19px;
+font-family:arial; 
+padding: 8px 8px 8px 8px; 
+text-decoration:none; 
+display:inline-block; 
+
+ background-color: #333333; 
+ background-image: -webkit-gradient(linear, left top, left bottom, from(#228DC3), to(#06496A));
+ background-image: -webkit-linear-gradient(top, #228DC3, #06496A);
+ background-image: -moz-linear-gradient(top, #228DC3, #06496A);
+ background-image: -ms-linear-gradient(top, #228DC3, #06496A);
+ background-image: -o-linear-gradient(top, #228DC3, #06496A);
+ background-image: linear-gradient(to bottom, #228DC3, #06496A);
+}
+/*for acc button's */
+.SignIn3{
+	
+	margin-left: 15%;
+  width: 72%;
+border:0px solid #C9C9C9;
+-webkit-border-radius: 8px; 
+-moz-border-radius: 8px;
+border-radius: 8px;
+font-size:19px;
+font-family:arial; 
+padding: 8px 8px 8px 8px; 
+text-decoration:none; 
+display:inline-block; 
+color: white;
+ background-color: #333333; 
+ background-image: -webkit-gradient(linear, left top, left bottom, from(#727171), to(#1E1A1A));
+ background-image: -webkit-linear-gradient(top, #727171, #1E1A1A);
+ background-image: -moz-linear-gradient(top, #727171, #1E1A1A);
+ background-image: -ms-linear-gradient(top, #727171, #1E1A1A);
+ background-image: -o-linear-gradient(top, #727171, #1E1A1A);
+ background-image: linear-gradient(to bottom, #727171, #1E1A1A);
+}
+.SignIn3:hover{
+color: black;
+	margin-left: 15%;
+  width: 72%;
+border:0px solid #C9C9C9;
+-webkit-border-radius: 8px; 
+-moz-border-radius: 8px;
+border-radius: 8px;
+font-size:19px;
+font-family:arial; 
+padding: 8px 8px 8px 8px; 
+text-decoration:none; 
+display:inline-block; 
+
+ background-color: #333333; 
+ background-image: -webkit-gradient(linear, left top, left bottom, from(#228DC3), to(#06496A));
+ background-image: -webkit-linear-gradient(top, #228DC3, #06496A);
+ background-image: -moz-linear-gradient(top, #228DC3, #06496A);
+ background-image: -ms-linear-gradient(top, #228DC3, #06496A);
+ background-image: -o-linear-gradient(top, #228DC3, #06496A);
+ background-image: linear-gradient(to bottom, #228DC3, #06496A);
+}
+header {
+width:105%;
+position: relative;
+margin:10px auto 10px;
+height: 50px;
+border-radius: 0px;
+border:1px solid #000;
+padding-top: 0px;
+margin-top: -10px;
+margin-left: -10px;
+margin-right: 0px;
+background-color: black;
+}
+#headerimg1{
+	
+ margin-left: 10%;
+margin-top: 0.8%;
+
+}
+#headerimg2{
+
+ margin-left: 14%;
+margin-top: -3.1%;
+
+}
+/* scroll bar effect*/
+::-webkit-scrollbar {
+    width: 8px;
+}
+ 
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(66,65,62,0.4); 
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+ 
+
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: rgba(66,65,62,0.8); 
+    -webkit-box-shadow: inset 0 0 6px rgba(66,65,62,0.8); 
+}
+::-webkit-scrollbar-thumb:window-inactive {
+	background: rgba(66,65,62,0.4); 
+}
+/* scroll bar effect*/
+</style>
+</head>
+<body>
+<header>
+ <div id="headerimg1">
+	 <a href="../ShreeTest.html" ><img src="home.png"/> </a>
+	 </div>
+	 <div id="headerimg2">
+	 <a href="../ShreeTest.html" ><img src="home1.png"/></a>
+	 </div>
+</header>
+<form id="signupform" name="signup" method="post">   
+<div id="acc">
+<div id="accordion">
+
+	<h3>Account Details</h3>
+	<div>
+		 <form id="signupform1" name="signup1" method="post" action="index.jsp">
+	    <div id="formalign">
+	    <label for="emailid">Email Id</label>                  
+	    <input type="email" placeholder="xyz@abc.com" class="sutxtfield" name="username" tabindex="1" required />    
+	    <label for="password">Password </label>               
+	    <input type="password" name="password" class="sutxtfield" tabindex="2" required/>  
+        <label for="confirmpassword">ConfirmPassword</label>          
+        <input type="password"  tabindex="3" class="sutxtfield" name="Cpassword" required/>
+        	  
+        <label id="mob"> Contact No (Mobile)       </label>
+        <input type="text"  class="sutxtfield" name="mobileno" required />
+        
+        </div>
+        <br><br>
+        <div id="signupbtn"><input type="submit" class="SignIn3" value="update" /></div>
+       </form>
+     </div><!-- content division start signIn-->
+     <%
+         
+         
+         String username=request.getParameter("username"); 
+String password=request.getParameter("password"); 
+
+if(username != null && password != null)
+{
+
+Class.forName("com.mysql.jdbc.Driver").newInstance(); 
+
+java.sql.Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/pcadatabase", "root","root"); 
+Statement st= con.createStatement(); 
+ResultSet rs; 
+int i=st.executeUpdate("insert into sample values ('"+username+"','"+password+"')"); 
+
+} 
+         %>
+
+	<!-- content division end -->
+	<h3>Personal Details</h3>
+	<div>
+	
+
+	   <form id="signupform2" name="signup2" method="post">
+	    <div id="formalign">
+        <label for="firstname">First Name</label>                  
+        <input type="text" class="sutxtfield" name="Fname" required/>
+        <label for="lastname">Last Name</label>                                 
+        <input type="text" class="sutxtfield" name="Lname" required/>
+        <label for="fathername">Father's/Husband Name</label>    
+        <input type="text" class="sutxtfield" name="Gname" required/>
+        <label for="dob">Date-Of-Birth</label>       
+        <input type="date"  class="sutxtfield" placeholder="YYYY-MM-DD" required name="Dob" />
+            <label  id="alt"> Alternative E-Mail ID     </label>
+	    <input type="email"  class="sutxtfield" name="Aemail" />
+        <label id="mob"> Contact No (Landline)       </label>
+        <input type="text"  class="sutxtfield" name="Llno" />
+        <br><br><br>
+        </div>
+
+            
+       
+        <label id="g"> Gender </label>
+        <div id="gender"> 
+        <input type="radio" id="male" name="gender">
+        <label for="male">Male</label>  
+        <input type="radio" id="female" name="gender">
+        <label for="female">Female</label>
+         </div><br><br>
+         <div id="signupbtn"><input type="submit" class="SignIn3" value="update" /></div>
+</form>
+       
+        
+    </div>
+	<h3>Educational Details</h3>
+	<div>
+	<form id="signupform3" name="signup3" method="post">
+	    <div id="formalign">
+	    <label id="degree">Degree                    </label>
+	    <input id="autocomplete1" class="sutxtfield" title="type degree" name="Degree"required />
+        <label id="branch"> Branch                    </label>
+        <input id="autocomplete2" class="sutxtfield" title="type your Branch" name="Branch"required />
+        <label id="yoc"> Year Of Completion        </label>
+        <input type="Date"   class="sutxtfield" name="Year"required />
+        <label id="cgpa">CGPA</label>
+        <input type="text" class="sutxtfield" required name="cgpa" maxlength="5"  />
+        <label id="predegree">P re Degree Percentages    </label>
+        </div>
+        <div id="pd">
+        <input type="text" class="sutxtfield" placeholder="Tenth" size="5px" maxlength="5" name="Tenth"required />
+        <input type="text" class="sutxtfield" placeholder="Twelfth" size="6px" maxlength="5" name="Twelfth"required />
+        <input type="text" class="sutxtfield" placeholder="Diploma" size="7px" maxlength="5" name="Diploma" />
+        <input type="text" class="sutxtfield" placeholder="B.e/B.tech" size="10px" maxlength="5" name="Be" />
+        </div><br><br>
+        <div id="signupbtn"><input type="submit" class="SignIn3" value="update" /></div>
+        </form>
+	</div>
+	<h3>Accolades and Awards</h3>
+	<div>
+	<form id="signupform4" name="signup4" method="post">
+	<div id="formalign">
+	<label for="interests"> Area Of Interest          </label>      
+    <textarea name="Interests" class="sutxtfield" required rows="4" cols="38"></textarea>
+    <label for="achievements">Special Achievements</label>
+    <textarea name="Achievements" class="sutxtfield" requires rows="4" cols="38"></textarea>
+    </div><br><br>
+    <div id="signupbtn"><input type="submit" class="SignIn3" value="update" /></div>
+    </form>
+	</div>
+	<h3>Contact Details</h3>
+	<div>
+	<form id="signupform5" name="signup5" method="post">
+         <div id="formalign">
+ 
+        
+        <label id="address1"> Address-Line1             </label>
+        <input type="text" class="sutxtfield" placeholder="H-No.,StreetName" name="Address1"required />
+        <label id="address2"> Address-Line2             </label>
+        <input type="text" class="sutxtfield"  placeholder="Secondary St.Name" name="Address2" />
+        <label id="address3"> Address-Line3             </label>
+        <input type="text" class="sutxtfield"  placeholder="Area Name" name="Address3" required />
+        <label id="city"> City                      </label>
+        <input type="text"  class="sutxtfield" name="City"required />
+        <label id="state"> State                     </label>
+        <input type="text"  class="sutxtfield" name="State" required />            
+        <label id="country"> Country                   </label>
+        <input type="text"  class="sutxtfield" name="Country"required />
+        <label id="pincode">Pincode                  </label>
+        <input type="text"  class="sutxtfield" name="Pincode"required /><br><br>
+                     </div>
+                     <div id="signupbtn"><input type="submit" class="SignIn3" value="update" /></div>
+                     </form>
+                     
+	</div>
+
+   </div>
+
+</div>
+  </div>
+  
+  <div id="signupbtn"><input type="submit" class="SignIn3" value="SignUp" /></div>
+  </form>
+</body>

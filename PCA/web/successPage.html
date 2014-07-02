@@ -1,0 +1,183 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>Student Dashboard</title>
+      <style type="text/css">
+          
+          html { 
+background: url(image/bg.png) no-repeat center center fixed; 
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+color :grey;
+font-family:Segoe UI; 
+}
+          
+          
+       #header {
+width:105%;
+position: relative;
+margin:10px auto 10px;
+height: 50px;
+border-radius: 0px;
+border:1px solid #000;
+padding-top: 0px;
+margin-top: -10px;
+margin-left: -10px;
+margin-right: 0px;
+background-color: black;
+}
+#headerimg1{
+  
+ margin-left: 05%;
+margin-top: 0.8%;
+
+}
+#headerimg2{
+
+ margin-left: 10%;
+margin-top: -3.1%;
+
+}
+        #place {
+          padding-top: 50px;
+          margin-left: 100px
+        }
+        #size
+        {
+         margin-top: 100%;
+        }
+        #leftPanel
+        {
+          position: fixed;
+          top:3%;
+          right:45%;
+        }
+  .LeftPanelButton{
+  
+          border:0px solid #C9C9C9;
+          border-radius: 20px;
+          font-size:15px;
+          font-family:arial; 
+          padding: 4px 4px 4px 4px; 
+          text-decoration:none; 
+          display:inline-block; 
+          color: #D2E7E0;
+          background-color: #333333; 
+          background-image: -webkit-gradient(linear, left top, left bottom, from(#59A1E0), to(#1189CF));
+          background-image: -webkit-linear-gradient(top, #59A1E0, #1189CF);
+          background-image: -moz-linear-gradient(top, #59A1E0, #1189CF);
+          background-image: -ms-linear-gradient(top, #59A1E0, #1189CF);
+          background-image: -o-linear-gradient(top, #59A1E0, #1189CF);
+          background-image: linear-gradient(to bottom, #59A1E0, #1189CF);
+        }
+      </style>
+      <link rel="stylesheet" href="stylesheets/jquery.sidr.dark.css">
+      <script  src="jquery/jquery.js" ></script>
+      <script  src="jquery/jquery.sidr.min.js"></script>
+      
+      
+      
+
+<script type="text/javascript">
+$(document).ready(function() {	
+
+		var id = '#dialog';
+	
+		//Get the screen height and width
+		var maskHeight = $(document).height();
+		var maskWidth = $(window).width();
+	
+		//Set heigth and width to mask to fill up the whole screen
+		$('#mask').css({'width':maskWidth,'height':maskHeight});
+		
+		//transition effect		
+		$('#mask').fadeIn(1000);	
+		$('#mask').fadeTo("slow",0.8);	
+	
+		//Get the window height and width
+		var winH = $(window).height();
+		var winW = $(window).width();
+              
+		//Set the popup window to center
+		$(id).css('top',  winH/2-$(id).height()/2);
+		$(id).css('left', winW/2-$(id).width()/2);
+	
+		//transition effect
+		$(id).fadeIn(2000); 	
+	
+	//if close button is clicked
+	$('.window .close').click(function (e) {
+		//Cancel the link behavior
+		e.preventDefault();
+		
+		$('#mask').hide();
+		$('.window').hide();
+	});		
+	
+	//if mask is clicked
+	$('#mask').click(function () {
+		$(this).hide();
+		$('.window').hide();
+	});		
+	
+});
+
+</script>
+
+
+
+<style type="text/css">
+body {
+font-family:verdana;
+font-size:15px;
+}
+
+a {color:#333; text-decoration:none}
+a:hover {color:#ccc; text-decoration:none}
+
+#mask {
+  position:absolute;
+  left:0;
+  top:0;
+  z-index:9000;
+  background-color:#000;
+  display:none;
+}  
+#boxes .window {
+  position:absolute;
+  left:0;
+  top:0;
+  width:440px;
+  height:200px;
+  display:none;
+  z-index:9999;
+  padding:20px;
+}
+#boxes #dialog {
+  width:375px; 
+  height:203px;
+  padding:10px;
+  background-color:#ffffff;
+}
+</style>
+
+
+    </head>
+    <body>
+        
+<div id="boxes">
+<div style="top: 199.5px; left: 551.5px; display: none;" id="dialog" class="window">
+Simple Modal Window | 
+<a href="#" class="close">Close it</a>
+</div>
+<!-- Mask to cover the whole screen -->
+<div style="width: 1478px; height: 602px; display: none; opacity: 0.8;" id="mask"></div>
+</div>
+    </body>
+</html>
